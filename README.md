@@ -10,3 +10,5 @@
 - level 에 turret, tank 지정 완료
 - basecase 상속 받은 tank c++ 생성 
 - VisibleAnywhere , Category = "CameraComponent" spring arm 과 camera rootcomponent 에 부착
+- player input 생성
+- 
