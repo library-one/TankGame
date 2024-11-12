@@ -11,4 +11,7 @@
 - basecase 상속 받은 tank c++ 생성 
 - VisibleAnywhere , Category = "CameraComponent" spring arm 과 camera rootcomponent 에 부착
 - player input 생성
-- 
+
+# 2024_11_12
+- inputComponent 를 이용한 움직임 구현 
+- AddActorLocalOffset 함수를 이용한 엑터의 로컬 좌표계 이동 구현
