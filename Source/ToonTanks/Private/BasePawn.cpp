@@ -9,7 +9,7 @@ ABasePawn::ABasePawn()
 {
  	// Set this pawn to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
-	//Çì´õ ÆÄÀÏ¿¡¼­ »ý¼ºÇÑ º¯¼öÀÇ Æ÷ÀÎÅÍ ÁÖ¼Ò°ªÀ» cpp»ý¼ºÀÚ¿¡¼­ ³Ö¾îÁÜ ÅÛÇÃ¸´ ÇÔ¼öÀÎ createdefaultsubobject¿¡¼­ Æ÷ÀÎÅÍ ÁÖ¼Ò¸¦ ³Ö¾îÁÜ
+	//ï¿½ï¿½ï¿? ï¿½ï¿½ï¿½Ï¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¼Ò°ï¿½ï¿½ï¿½ cppï¿½ï¿½ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ ï¿½Ö¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ã¸ï¿½ ï¿½Ô¼ï¿½ï¿½ï¿½ createdefaultsubobjectï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¼Ò¸ï¿½ ï¿½Ö¾ï¿½ï¿½ï¿½
 	CapsuleComp = CreateDefaultSubobject<UCapsuleComponent>(TEXT("Capsule Collider"));
 	RootComponent = CapsuleComp;
 
@@ -22,7 +22,6 @@ ABasePawn::ABasePawn()
 	AttackSpawnPoint = CreateDefaultSubobject<USceneComponent>(TEXT("Spawn Point"));
 	AttackSpawnPoint->SetupAttachment(TurretMesh);
 
-	MovingSpeed = 900.0f;
 }
 
 // Called when the game starts or when spawned
@@ -38,11 +37,3 @@ void ABasePawn::Tick(float DeltaTime)
 	Super::Tick(DeltaTime);
 
 }
-
-// Called to bind functionality to input
-void ABasePawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
-{
-	Super::SetupPlayerInputComponent(PlayerInputComponent);
-
-}
-

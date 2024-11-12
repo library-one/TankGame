@@ -16,6 +16,9 @@ class TOONTANKS_API ATank : public ABasePawn
 	
 public:
 	ATank();
+
+		// Called to bind functionality to input
+	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 private:
 
 	UPROPERTY(VisibleAnywhere  , Category = "CameraComponent")
@@ -23,5 +26,11 @@ private:
 
 	UPROPERTY(VisibleAnywhere  , Category = "CameraComponent")
 	class UCameraComponent* Camera;
+
+private:
+	void Move(float value);
+
+	UPROPERTY(EditAnywhere,BlueprintReadWrite,meta=(AllowPrivateAccess="true"))
+	float Speed;
 
 };

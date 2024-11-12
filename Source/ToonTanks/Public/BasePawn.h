@@ -19,20 +19,20 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-//ÀÌ Å¬·¡½º¿¡¼­¸¸ »ç¿ë ÇÒ ¼ö ÀÖ´Â Á¢±Ù ÁöÁ¤ÀÚ struct ´Â ±âº»ÀÌ public class ´Â ±âº»ÀÌ private ÀÌ´Ù .
+//ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿? ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ struct ï¿½ï¿½ ï¿½âº»ï¿½ï¿½ public class ï¿½ï¿½ ï¿½âº»ï¿½ï¿½ private ï¿½Ì´ï¿½ .
 private:
 protected:
-	//UPROPERTY() ¼Ó¼ºÁß VisibleAnywhere Àº ÇÁ·ÎÆÛÆ¼´Â ¸ø°ÇµéÁö¸¸ detailÆÐ³Î¿¡¼­´Â º¼ ¼ö ÀÖ´Ù.
-	//EditAnywhere Àº detail ÆÐ³Î¿¡¼­ º¼ ¼ö ÀÖ°í ÇÁ·ÎÆÛÆ¼µµ °Çµé ¼ö ÀÖ´Ù.
-	//VisibleInstaceOnly ´Â level ¿¡ bp ¸¦ ³Ö°í worldoutliner ¿¡¼­ bp detail ¿¡ ¼­ º¼ ¼ö ÀÖ´Ù ÇÁ·ÎÆÛÆ¼´Â ¸ø °Çµê
+	//UPROPERTY() ï¿½Ó¼ï¿½ï¿½ï¿½ VisibleAnywhere ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ¼ï¿½ï¿½ ï¿½ï¿½ï¿½Çµï¿½ï¿½ï¿½ï¿½ï¿½ detailï¿½Ð³Î¿ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½.
+	//EditAnywhere ï¿½ï¿½ detail ï¿½Ð³Î¿ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ¼ï¿½ï¿½ ï¿½Çµï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½.
+	//VisibleInstaceOnly ï¿½ï¿½ level ï¿½ï¿½ bp ï¿½ï¿½ ï¿½Ö°ï¿½ worldoutliner ï¿½ï¿½ï¿½ï¿½ bp detail ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ¼ï¿½ï¿½ ï¿½ï¿½ ï¿½Çµï¿½
 
-	//UPROPERTY() ´Â ¾ð¸®¾ó ¸ÞÅ©·Î·Î ºí·çÇÁ¸°Æ® Àû¿ë, °¡ºñÁö ÄÃ·º¼Ç(¸Þ¸ð¸® °ü¸®)¸¦ »ç¿ë °¡´ÉÇÏ±â ¶§¹®¿¡ Àû¿ë ÇØ¾ßÇÔ  
+	//UPROPERTY() ï¿½ï¿½ ï¿½ð¸®¾ï¿½ ï¿½ï¿½Å©ï¿½Î·ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ã·ï¿½ï¿½ï¿½(ï¿½Þ¸ï¿½ ï¿½ï¿½ï¿½ï¿½)ï¿½ï¿½ ï¿½ï¿½ï¿? ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ø¾ï¿½ï¿½ï¿½  
 	UPROPERTY(VisibleAnywhere,BlueprintReadOnly, Category= "Components2",meta=(AllowPrivateAccess="true"))
 	class UCapsuleComponent* CapsuleComp;
-	//ÇÁ¸®ÇÁ·Î¼¼¼­¶ó´Â ºÎºÐ¿¡¼­ ¶óÀÌºê·¯¸® Çì´õ ÆÄÀÏÀ» °¡Á®¿Ã ¶§ ´Ù °¡Á®¿À±â ¶§¹®¿¡ »ç¿ëÇÒ ºÎºÐ¸¸ °¡Á®¿À´Â°Ô ¸ÂÀ½
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿? ï¿½ÎºÐ¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìºê·¯ï¿½ï¿½ ï¿½ï¿½ï¿? ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿? ï¿½ÎºÐ¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â°ï¿½ ï¿½ï¿½ï¿½ï¿½
 	//#include "Components/CapsuleComponent.h"
-	//¾ð¸®¾ó ¿£Áø¿¡ Àü¹æ ¼±¾ðÀÌ¶ó´Â ¹æ¹ýÀÌ ÀÕ´Âµ¥ °¢ ÆÄÀÏ¿¡ Çì´õ¸¦ °¡Á®¿Ã¶§ ÆÄÀÏÀ» ºÙ¿©¼­ °¡Á®¿À´Â ¹æ½Ä ´ë½Å ºÎ´ãÀ» ´úÇØÁÖ´Â ¹æ¹ý 
-	//¾Õ¿¡ class ¸¸ ºÙ¿©ÁÖ¸éµÊ ´Ü »ç¿ëÇÒ·Á´Â Å¬·¡½º À§¿¡ »óÀ§ »ó¼Ó Å¬·¡½ºÀÇ Çì´õ´Â ÇÊ¼ö ÀÌ´Ù.
+	//ï¿½ð¸®¾ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì¶ï¿½ï¿? ï¿½ï¿½ï¿½ï¿½ï¿? ï¿½Õ´Âµï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½Ï¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿? ï¿½ï¿½ï¿½ï¿½ï¿½Ã¶ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿? ï¿½ï¿½ï¿? ï¿½Î´ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ö´ï¿½ ï¿½ï¿½ï¿? 
+	//ï¿½Õ¿ï¿½ class ï¿½ï¿½ ï¿½Ù¿ï¿½ï¿½Ö¸ï¿½ï¿? ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ò·ï¿½ï¿½ï¿? Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿? Å¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿? ï¿½Ê¼ï¿½ ï¿½Ì´ï¿½.
 	
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components2", meta = (AllowPrivateAccess = "true"))
 	UStaticMeshComponent* BaseMesh;
@@ -45,10 +45,5 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	// Called to bind functionality to input
-	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
-
 public:
-	UPROPERTY(EditAnywhere,BlueprintReadWrite,Category="TankStatus")
-	float MovingSpeed;
 };
