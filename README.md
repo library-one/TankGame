@@ -16,5 +16,5 @@
 - inputComponent 를 이용한 움직임 구현 
 - AddActorLocalOffset 함수를 이용한 엑터의 로컬 좌표계 이동 구현
 - 속도 = Speed(EditAnywhere) x value x DeltaTime 을 곱하여 이동 속도 계산 (UGamePlayStatics::GetWorldDeltaSecodns(this))
-- 
+- 회전 = AddActorRotator 를 사용하여 회전 FRotator 클래스 사용 
   
