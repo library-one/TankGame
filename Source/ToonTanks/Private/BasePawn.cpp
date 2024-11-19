@@ -3,7 +3,7 @@
 
 #include "BasePawn.h"
 #include "Components/CapsuleComponent.h"
-
+#include "Kismet/GameplayStatics.h"
 // Sets default values
 ABasePawn::ABasePawn()
 {
@@ -24,16 +24,18 @@ ABasePawn::ABasePawn()
 
 }
 
-// Called when the game starts or when spawned
-void ABasePawn::BeginPlay()
+void ABasePawn::RotateTurret(FVector LookAtTarget)
 {
-	Super::BeginPlay();
-	
-}
+	//FVector 값 즉 가르키는 곳의 좌표값을 라인 트레이싱의 HitResult 값에서 엑터의 위치 값을 빼면 좌표값이 나옴
+	FVector ToTarget =LookAtTarget - TurretMesh->GetComponentLocation();
+	//ToTarget 의 좌표값 만큼 Pitch , Yaw , Roll 의 회전값을 줘서 그 회전값을 저장함 Rotator은 유명한 회전값 저장 구조체임 
+	//바닥과 평행하게 회전 시키고 싶음으로 Pitch 값과 Roll 값은 0으로 설정 회전값의 Yaw 값만 변경 
+	FRotator LookAtRotation = FRotator(0.f,ToTarget.Rotation().Yaw,0.f);
 
-// Called every frame
-void ABasePawn::Tick(float DeltaTime)
-{
-	Super::Tick(DeltaTime);
-
+	//회전 값을 할당 할때 월드스페이스의 좌표값에서 엑터의 좌표값을 뺀 값을 변경하여 회전 시키기 때문에
+	//LocalOffset이 아닌 WorldRotation 으로 값을 넣어주는게 맞음 엑터를 기준으로 월드스페이스의 좌표로 이동시키기 때문이다.
+	//RInterTo 보간 함수를 사용해 회전을 더 부드럽게 만듦
+	TurretMesh->SetWorldRotation(FMath::RInterpTo(
+								TurretMesh->GetComponentRotation(),LookAtRotation,
+								UGameplayStatics::GetWorldDeltaSeconds(this),5.f));
 }
