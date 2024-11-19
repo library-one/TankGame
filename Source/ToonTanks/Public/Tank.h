@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "BasePawn.h"
+
 #include "Tank.generated.h"
 
 /**
@@ -21,10 +22,10 @@ public:
 	virtual void SetupPlayerInputComponent(class UInputComponent *PlayerInputComponent) override;
 
 private:
-	UPROPERTY(VisibleAnywhere, Category = "CameraComponent")
+	UPROPERTY(EditAnywhere, Category = "CameraComponent")
 	class USpringArmComponent *SpringArm;
 
-	UPROPERTY(VisibleAnywhere, Category = "CameraComponent")
+	UPROPERTY(EditAnywhere, Category = "CameraComponent")
 	class UCameraComponent *Camera;
 
 protected:
@@ -44,5 +45,6 @@ private:
 	float Speed = 800.0f;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (AllowPrivateAccess = "true"))
 	float TurnRate = 90.0f;
+
 	float Value;
 };

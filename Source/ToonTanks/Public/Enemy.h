@@ -7,11 +7,23 @@
 #include "Enemy.generated.h"
 
 /**
- * 
+ *
  */
 UCLASS()
 class TOONTANKS_API AEnemy : public ABasePawn
 {
 	GENERATED_BODY()
-	
+
+	AEnemy();
+
+public:
+	virtual void Tick(float DeltaTime) override;
+	virtual void BeginPlay() override;
+
+private:
+	// 탱크의 클래스를 가져와 포인터로 사용 (클래스 전방선언)
+	class ATank *Tank;
+
+	UPROPERTY(EditAnywhere,BlueprintReadWrite,meta=(AllowPrivateAccess=true),Category="Attack")
+	float FireRange= 300.f;
 };

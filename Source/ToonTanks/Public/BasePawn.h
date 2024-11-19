@@ -14,22 +14,16 @@ class TOONTANKS_API ABasePawn : public APawn
 public:
 	// Sets default values for this pawn's properties
 	ABasePawn();
+
 protected:
+
 	void RotateTurret(FVector LookAtTarget);
+	void Fire();
 
-private:
-	//UPROPERTY() �Ӽ��� VisibleAnywhere �� ������Ƽ�� ���ǵ����� detail�гο����� �� �� �ִ�.
-	//EditAnywhere �� detail �гο��� �� �� �ְ� ������Ƽ�� �ǵ� �� �ִ�.
-	//VisibleInstaceOnly �� level �� bp �� �ְ� worldoutliner ���� bp detail �� �� �� �� �ִ� ������Ƽ�� �� �ǵ�
-
-	//UPROPERTY() �� �𸮾� ��ũ�η� ��������Ʈ ����, ������ �÷���(�޸� ����)�� ���? �����ϱ� ������ ���� �ؾ���  
+protected:
 	UPROPERTY(VisibleAnywhere,BlueprintReadOnly, Category= "Components2",meta=(AllowPrivateAccess="true"))
 	class UCapsuleComponent* CapsuleComp;
-	//�������μ������? �κп��� ���̺귯�� ���? ������ ������ �� �� �������� ������ �����? �κи� �������°� ����
-	//#include "Components/CapsuleComponent.h"
-	//�𸮾� ������ ���� �����̶��? �����? �մµ� �� ���Ͽ� �����? �����ö� ������ �ٿ��� �������� ���? ���? �δ��� �����ִ� ���? 
-	//�տ� class �� �ٿ��ָ��? �� ����ҷ���? Ŭ���� ���� ���� ���? Ŭ������ �����? �ʼ� �̴�.
-	
+
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components2", meta = (AllowPrivateAccess = "true"))
 	UStaticMeshComponent* BaseMesh;
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components2", meta = (AllowPrivateAccess = "true"))
