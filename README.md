@@ -15,4 +15,10 @@
 - AddActorLocalOffset 함수를 이용한 엑터의 로컬 좌표계 이동 구현
 - 속도 = Speed(EditAnywhere) x value x DeltaTime 을 곱하여 이동 속도 계산 (UGamePlayStatics::GetWorldDeltaSecodns(this))
 - 회전 = AddActorRotator 를 사용하여 회전 FRotator 클래스 사용 
-  
+
+# 
+- 라인 트레이싱을 이용해 Hit Event 를 DrawDebugSphere 로 간단하게 시각화 함 
+- Block Volume 으로 Hit Event 구역 설정
+- BasePawn 에 RotateTurret 으로 Tank 와 Enemy 둘다 상체 회전 설정
+  - Turret 은 FireRange 와 FVector::Dist() 로 Tank 와의 거리 감지 후 상체 움직임
+  - Tank 는 GetController 을 받아 클래스 함수인 GetHitResultUnderCursor(콜리전 채널, bool , HitResult) 로 HitResult 의 지점을 설정해 부모의 RotateTurret함수에 인자값을 집어넣어 상체 회전
