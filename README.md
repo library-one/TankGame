@@ -7,7 +7,7 @@
 - UPROPERTY()접근지정자 지정 가능자
 - static mesh component 각각 turret, base 지정 완료 
 - level 에 turret, tank 지정 완료
-- basecase 상속 받은 tank c++ 생성 
+- basecase 상속 받은 tank c++ 생성
 - VisibleAnywhere , Category = "CameraComponent" spring arm 과 camera rootcomponent 에 부착
 - player input 생성
 # 
@@ -20,5 +20,10 @@
 - 라인 트레이싱을 이용해 Hit Event 를 DrawDebugSphere 로 간단하게 시각화 함 
 - Block Volume 으로 Hit Event 구역 설정
 - BasePawn 에 RotateTurret 으로 Tank 와 Enemy 둘다 상체 회전 설정
-  - Turret 은 FireRange 와 FVector::Dist() 로 Tank 와의 거리 감지 후 상체 움직임
+  - emeny 은 FireRange 와 FVector::Dist() 로 Tank 와의 거리 감지 후 상체 움직임
   - Tank 는 GetController 을 받아 클래스 함수인 GetHitResultUnderCursor(콜리전 채널, bool , HitResult) 로 HitResult 의 지점을 설정해 부모의 RotateTurret함수에 인자값을 집어넣어 상체 회전
+
+#
+- Turret 발사 딜레이를 위한 Timer 함수 사용 TimerManager을 통해 SetTimer() 안의 인자 값으로 조절 Begin()에 생성
+- emeny 가 감지 시 2초마다 발사 
+- 발사체 Projectile  클래스 및 bp 생성
