@@ -26,4 +26,12 @@ private:
 
 	UPROPERTY(EditAnywhere,BlueprintReadWrite,meta=(AllowPrivateAccess=true),Category="Attack")
 	float FireRange= 300.f;
+
+	//발사체 딜레이 TimerManager에 쓸 인자들
+	FTimerHandle FireRateTimerHandle;
+	float FireRate = 2.f;
+	void CheckFireCondition();
+
+	bool InFireRange();
 };
+ 

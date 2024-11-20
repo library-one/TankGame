@@ -31,4 +31,7 @@ protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Components2", meta = (AllowPrivateAccess = "true"))
 	USceneComponent* AttackSpawnPoint;
 
+	//클래스 타입 c++ 변수 
+	UPROPERTY(EditDefaultsOnly, Category ="Attack")
+	TSubclassOf<class AProjectile> ProjectileClass;
 };
