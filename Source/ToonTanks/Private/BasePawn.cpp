@@ -3,7 +3,7 @@
 #include "BasePawn.h"
 #include "Components/CapsuleComponent.h"
 #include "Kismet/GameplayStatics.h"
-#include "DrawDebugHelpers.h"
+#include "Projectile.h"
 // Sets default values
 ABasePawn::ABasePawn()
 {
@@ -40,12 +40,16 @@ void ABasePawn::RotateTurret(FVector LookAtTarget)
 
 void ABasePawn::Fire()
 {
-	FVector ProjectileSpawnPointLocation = AttackSpawnPoint->GetComponentLocation();
-		DrawDebugSphere(GetWorld(),
-						ProjectileSpawnPointLocation,
-						25.0f,
-						12,
-						FColor::Red,
-						false,
-						3.f);
+	 FVector ProjectileSpawnPointLocation = AttackSpawnPoint->GetComponentLocation();
+	 FRotator PRojectileSpawnPointRoation = AttackSpawnPoint->GetComponentRotation();
+	// 	DrawDebugSphere(GetWorld(),
+	// 					ProjectileSpawnPointLocation,
+	// 					25.0f,
+	// 					12,
+	// 					FColor::Red,
+	// 					false,
+	// 					3.f);
+	//UWorld클래스의 함수인 GetWorld 안에 SpawnActor 를 사용하는데 다른 클래스 객체를 TSubclassOf로 가져와서 
+	//GetComponent의 위치 회전률을 가져와서 넣어주면 된다. 
+	GetWorld()->SpawnActor<AProjectile>(ProjectileClass,ProjectileSpawnPointLocation,PRojectileSpawnPointRoation);
 }

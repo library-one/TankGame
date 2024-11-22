@@ -32,6 +32,6 @@ protected:
 	USceneComponent* AttackSpawnPoint;
 
 	//클래스 타입 c++ 변수 
-	UPROPERTY(EditDefaultsOnly, Category ="Attack")
+	UPROPERTY(EditAnywhere, Category ="Attack")
 	TSubclassOf<class AProjectile> ProjectileClass;
 };

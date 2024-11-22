@@ -25,4 +25,11 @@ public:
 private:
 	UPROPERTY(EditDefaultsOnly,Category="Mesh")
 	UStaticMeshComponent* ProjectileMesh;
+
+	UPROPERTY(VisibleAnywhere,BlueprintReadWrite,meta=(AllowPrivateAccess="true"),Category="Movement")
+	class UProjectileMovementComponent* ProjectileMovement;
+
+	//델리게이트 함수 바인딩 콜백함수가 적용될려면 UFUNCTION()이 있어야 한다.
+	UFUNCTION()
+	void OnHit(UPrimitiveComponent* HitComp,AActor* OtherActor,UPrimitiveComponent* OtherComp,FVector NormalImpulse,const FHitResult& Hit);
 };
