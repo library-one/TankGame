@@ -27,3 +27,4 @@
 - Turret 발사 딜레이를 위한 Timer 함수 사용 TimerManager을 통해 SetTimer() 안의 인자 값으로 조절 Begin()에 생성
 - emeny 가 감지 시 2초마다 발사 
 - 발사체 Projectile  클래스 및 bp 생성
+- basePawn 에 SpawnActor을 통한 발사체 생성
