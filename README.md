@@ -28,3 +28,8 @@
 - emeny 가 감지 시 2초마다 발사 
 - 발사체 Projectile  클래스 및 bp 생성
 - basePawn 에 SpawnActor을 통한 발사체 생성
+- Hit Event 안 OnComponentHit 이란 멀티캐스트 델리게이트 함수 생성 -> 관련 함수에 인자 전달 -> 발사체 충돌 확인
+
+#
+- Health Component 생성
+- Health Component 에 OnTakeDamage 멀티케스트 델리게이트 생성 전달 -> ApplyDamage
