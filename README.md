@@ -2,7 +2,8 @@
 #
 - BasePawn 클래스 생성 - 플레이어 , 적AI 기본 틀
 - RootComponent(CapsuleComponent) 에 머리(StaticMeshComponent(발사,USceneComponet)) 몸통 (StaticMeshComponent(이동)) 결합하여 각 트랜스폼에 맞춰 이동 RootComponent는 Attachment를 지원
-![image](https://github.com/user-attachments/assets/7afd16b5-3e23-4be2-8e2a-7725abdf48f6)
+![image](https://github.com/user-attachments/assets/d5fbbee0-ae41-407f-afcb-a070f4469a8e)
+
 # 
 - UPROPERTY()접근지정자 지정 가능자
 - static mesh component 각각 turret, base 지정 완료 
@@ -32,4 +33,6 @@
 
 #
 - Health Component 생성
-- Health Component 에 OnTakeDamage 멀티케스트 델리게이트 생성 전달 -> ApplyDamage
+- Health Component 에 OnTakeDamage 멀티케스트 델리게이트 생성 전달 -> UGamePlayStatics::ApplyDamage()
+- 엑터의 스폰 좌표 설정 -> SpawnActor 생성 -> Owner 설정 -> 발사체에서 맞았을 경우 ApplyDamage() OnComponentHit 델리게이트 반환 -> 맞은 엑터의 체력에서 OnTakeAnyDamage델리게이트 에 DamageTaken 콜백 함수 전달 
+- 이 모든게 BasePawn 에서 설정한 SetOwner 로 GetOwner 로 가져와 멀티캐스트 딜리게이트 반환 
